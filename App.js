@@ -19,11 +19,23 @@ import {
 import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
 import WeAccept from 'react-native-we-accept';
 
+if (__DEV__) {
+  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+}
+
 const App: () => React$Node = () => {
   useEffect(() => {
+    fetch('https://mywebsite.com/mydata.json')
+      .then((response) => {
+        console.log('response', response);
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
     console.log(WeAccept);
     WeAccept.initWeAccept({
-      paymentKey: 'replace with your token',
+      paymentKey:
+        'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnVZVzFsSWpvaWFXNXBkR2xoYkNJc0luQnliMlpwYkdWZmNHc2lPakUxTWpZeUxDSmpiR0Z6Y3lJNklrMWxjbU5vWVc1MEluMC55TWN5LUZ6cnFIVC1JeG5QRHZJQjNlNFhyekpLOFpsODkwbDRoSmVOaHRSRl9BNlY0NmJmT3d4aTdyMmkwMFVyQ2wxSlZhVmhvTXlHdng3ZVlwS25jdw==',
     });
 
     WeAccept.payWithToken(
@@ -32,12 +44,24 @@ const App: () => React$Node = () => {
         maskedPanNumber: 'XXXXXXXXXXXXXX1234',
       },
       (response) => {
-        console.log(response);
+        console.log('response', response);
       },
       (error) => {
-        console.log(error);
+        console.log('error', error);
       },
     );
+
+    // WeAccept.payWithNoToken(
+    //   {
+    //     showSaveCard: true,
+    //   },
+    //   (response) => {
+    //     console.log(response);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   },
+    // );
   }, []);
 
   return (
