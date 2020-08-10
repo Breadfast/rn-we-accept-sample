@@ -23,8 +23,7 @@ const App: () => React$Node = () => {
   useEffect(() => {
     console.log(WeAccept);
     WeAccept.initWeAccept({
-      paymentKey:
-        'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnVZVzFsSWpvaWFXNXBkR2xoYkNJc0luQnliMlpwYkdWZmNHc2lPakUxTWpZeUxDSmpiR0Z6Y3lJNklrMWxjbU5vWVc1MEluMC55TWN5LUZ6cnFIVC1JeG5QRHZJQjNlNFhyekpLOFpsODkwbDRoSmVOaHRSRl9BNlY0NmJmT3d4aTdyMmkwMFVyQ2wxSlZhVmhvTXlHdng3ZVlwS25jdw==',
+      paymentKey: 'replace with your token',
     });
 
     WeAccept.payWithToken(
