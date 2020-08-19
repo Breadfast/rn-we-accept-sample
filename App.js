@@ -25,23 +25,14 @@ if (__DEV__) {
 
 const App: () => React$Node = () => {
   useEffect(() => {
-    fetch('https://mywebsite.com/mydata.json')
-      .then((response) => {
-        console.log('response', response);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
-    console.log(WeAccept);
-    WeAccept.initWeAccept({
-      paymentKey:
-        'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmlhV3hzYVc1blgyUmhkR0VpT25zaVptbHljM1JmYm1GdFpTSTZJa05zYVdabWIzSmtJaXdpYkdGemRGOXVZVzFsSWpvaVRtbGpiMnhoY3lJc0luTjBjbVZsZENJNklrVjBhR0Z1SUV4aGJtUWlMQ0ppZFdsc1pHbHVaeUk2SWpnd01qZ2lMQ0ptYkc5dmNpSTZJalF5SWl3aVlYQmhjblJ0Wlc1MElqb2lPREF6SWl3aVkybDBlU0k2SWtwaGMydHZiSE5yYVdKMWNtZG9JaXdpYzNSaGRHVWlPaUpWZEdGb0lpd2lZMjkxYm5SeWVTSTZJa05TSWl3aVpXMWhhV3dpT2lKamJHRjFaR1YwZEdVd09VQmxlR0V1WTI5dElpd2ljR2h2Ym1WZmJuVnRZbVZ5SWpvaUt6ZzJLRGdwT1RFek5USXhNRFE0TnlJc0luQnZjM1JoYkY5amIyUmxJam9pTURFNE9UZ2lMQ0psZUhSeVlWOWtaWE5qY21sd2RHbHZiaUk2SWs1QkluMHNJbVY0Y0NJNk1UVTJPVEkwTWpneU1Dd2ljRzFyWDJsd0lqb2lOREV1TkRJdU1UUTVMakUwT1NJc0ltRnRiM1Z1ZEY5alpXNTBjeUk2TVRBd0xDSnZjbVJsY2w5cFpDSTZNell3TVRneE55d2lhVzUwWldkeVlYUnBiMjVmYVdRaU9qWTNOREVzSW5WelpYSmZhV1FpT2pRM01EVXNJbU4xY25KbGJtTjVJam9pUlVkUUlpd2liRzlqYTE5dmNtUmxjbDkzYUdWdVgzQmhhV1FpT21aaGJITmxmUS5YamNQSGpsSmlsbzZXbW1sNlZxZzNuNDdPVE5FV2RDQlZfVFZxR1l4d21BcGRXVkNsajBjeU1fSTlGNUdPREd1d0htMHZzOTd5MmJ3S3BybENrbWRidw==',
-    });
-
+    /**************** Payment with Token example *********************/
     // WeAccept.payWithToken(
     //   {
+    //     paymentKey:
+    //       'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqb3pOVFUxTENKamRYSnlaVzVqZVNJNklrVkhVQ0lzSW1KcGJHeHBibWRmWkdGMFlTSTZleUptYVhKemRGOXVZVzFsSWpvaVEyeHBabVp2Y21RaUxDSnNZWE4wWDI1aGJXVWlPaUpPYVdOdmJHRnpJaXdpYzNSeVpXVjBJam9pUlhSb1lXNGdUR0Z1WkNJc0ltSjFhV3hrYVc1bklqb2lPREF5T0NJc0ltWnNiMjl5SWpvaU5ESWlMQ0poY0dGeWRHMWxiblFpT2lJNE1ETWlMQ0pqYVhSNUlqb2lTbUZ6YTI5c2MydHBZblZ5WjJnaUxDSnpkR0YwWlNJNklsVjBZV2dpTENKamIzVnVkSEo1SWpvaVExSWlMQ0psYldGcGJDSTZJbU5zWVhWa1pYUjBaVEE1UUdWNFlTNWpiMjBpTENKd2FHOXVaVjl1ZFcxaVpYSWlPaUlyT0RZb09DazVNVE0xTWpFd05EZzNJaXdpY0c5emRHRnNYMk52WkdVaU9pSXdNVGc1T0NJc0ltVjRkSEpoWDJSbGMyTnlhWEIwYVc5dUlqb2lUa0VpZlN3aWFXNTBaV2R5WVhScGIyNWZhV1FpT2pZNU56RXNJbUZ0YjNWdWRGOWpaVzUwY3lJNk5UQXdNREF3TENKd2JXdGZhWEFpT2lJeE1ESXVORFF1T0M0Mk1TSXNJbVY0Y0NJNk16WXdNREF3TURBd01EQXdNVFU1TnpNeE16TTNPQ3dpYkc5amExOXZjbVJsY2w5M2FHVnVYM0JoYVdRaU9tWmhiSE5sTENKdmNtUmxjbDlwWkNJNk5UWXpNelkwTW4wLkNNcGVCNW1fSmJxdC13T1Y0SHJYRXV4OFhlVTJIdm9ySDM2eWoyVFdWQ05lWE1jWkJvZWVqWnM2WGNIYzJZYTUxaXFsNnlTYnlQNU1wdmx4ODY1cDFB',
     //     token: '12345',
     //     maskedPanNumber: 'XXXXXXXXXXXXXX1234',
+    //     themeColor: '0x80970073',
     //   },
     //   (response) => {
     //     console.log('response', response);
@@ -51,12 +42,16 @@ const App: () => React$Node = () => {
     //   },
     // );
 
+    /**************** Payment with No Token example *********************/
     WeAccept.payWithNoToken(
       {
+        paymentKey:
+          'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqb3pOVFUxTENKamRYSnlaVzVqZVNJNklrVkhVQ0lzSW1KcGJHeHBibWRmWkdGMFlTSTZleUptYVhKemRGOXVZVzFsSWpvaVEyeHBabVp2Y21RaUxDSnNZWE4wWDI1aGJXVWlPaUpPYVdOdmJHRnpJaXdpYzNSeVpXVjBJam9pUlhSb1lXNGdUR0Z1WkNJc0ltSjFhV3hrYVc1bklqb2lPREF5T0NJc0ltWnNiMjl5SWpvaU5ESWlMQ0poY0dGeWRHMWxiblFpT2lJNE1ETWlMQ0pqYVhSNUlqb2lTbUZ6YTI5c2MydHBZblZ5WjJnaUxDSnpkR0YwWlNJNklsVjBZV2dpTENKamIzVnVkSEo1SWpvaVExSWlMQ0psYldGcGJDSTZJbU5zWVhWa1pYUjBaVEE1UUdWNFlTNWpiMjBpTENKd2FHOXVaVjl1ZFcxaVpYSWlPaUlyT0RZb09DazVNVE0xTWpFd05EZzNJaXdpY0c5emRHRnNYMk52WkdVaU9pSXdNVGc1T0NJc0ltVjRkSEpoWDJSbGMyTnlhWEIwYVc5dUlqb2lUa0VpZlN3aWFXNTBaV2R5WVhScGIyNWZhV1FpT2pZNU56RXNJbUZ0YjNWdWRGOWpaVzUwY3lJNk5UQXdNREF3TENKd2JXdGZhWEFpT2lJeE1ESXVORFF1T0M0Mk1TSXNJbVY0Y0NJNk16WXdNREF3TURBd01EQXdNVFU1TnpNeE16TTNPQ3dpYkc5amExOXZjbVJsY2w5M2FHVnVYM0JoYVdRaU9tWmhiSE5sTENKdmNtUmxjbDlwWkNJNk5UWXpNelkwTW4wLkNNcGVCNW1fSmJxdC13T1Y0SHJYRXV4OFhlVTJIdm9ySDM2eWoyVFdWQ05lWE1jWkJvZWVqWnM2WGNIYzJZYTUxaXFsNnlTYnlQNU1wdmx4ODY1cDFB',
         showSaveCard: true,
       },
-      (response) => {
-        console.log(response);
+      (code, message) => {
+        console.log('Response code: ', code);
+        console.log('Response message: ', message);
       },
       (error) => {
         console.log(error);

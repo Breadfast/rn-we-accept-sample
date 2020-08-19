@@ -5458,7 +5458,7 @@ react-native-flipper@^0.52.1:
   integrity sha512-+Rje0uRUuk/k32odEHsaAXC1CmQ/jKn8h3RBBZlVi3GFAWYpbIZpPspE/s7yFa9B7rcS6fHZbewrf9IfM7FiWA==
 
 "react-native-we-accept@file:../react-native-we-accept":
-  version "1.0.0"
+  version "0.0.1"
 
 react-native@0.63.2:
   version "0.63.2"
